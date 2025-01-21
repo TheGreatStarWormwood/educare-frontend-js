@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tutor Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tutor-profile">
+            <h2 id="tutor-name"></h2>
+            <p id="tutor-description"></p>
+            <h3>Listings:</h3>
+            <ul id="listings">
+                <!-- Tutor listings will be dynamically injected here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tutor Directory</p>
+    </footer>
+
+    <script src="tutordata.js"></script>
+    <script>
+        // Extract tutor ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tutorId = parseInt(urlParams.get('id'));
+
+        // Find tutor by ID
+        const tutor = tutorData.find(tutor => tutor.id === tutorId);
+
+        if (tutor) {
+            // Display tutor's name and description (or any other details you want)
+            document.getElementById('tutor-name').innerText = tutor.name;
+            document.getElementById('tutor-description').innerText = `Tutor Profile for ${tutor.name}`;
+
+            // Display tutor's listings
+            const listingsList = document.getElementById('listings');
+            tutor.listings.forEach(listing => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <strong>${listing.subject} ${listing.grade}</strong><br>
+                    Price: ${listing.price}<br>
+                    Location: ${listing.location}<br>
+                    <a href="listing.html?id=${tutor.id}&listing=${listing.subject}">View Listing Details</a>
+                `;
+                listingsList.appendChild(listItem);
+            });
+        } else {
+            document.getElementById('tutor-profile').innerHTML = "<p>Tutor not found.</p>";
+        }
+    </script>
+</body>
+</html>
