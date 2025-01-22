@@ -58,7 +58,9 @@ main {
     border-radius: 4px;
     cursor: pointer;
     max-width: 9rem;
-    height: 4rem;
+    height: 2rem;
+    max-width: 20rem;
+    border-radius: 20px;
 }
 
 .search-bar button:hover {
@@ -67,11 +69,16 @@ main {
 
 #tutor-list {
     margin-top: 20px;
+    justify-content: center; 
+    margin: 20px auto;
+    padding: 10px;
 }
 
 #tutor-items {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
 }
 
 .tutor-item {
