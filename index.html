@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
         <h1>Tutor Directory</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -19,21 +21,25 @@
     </header>
 
     <main>
-        <section id="search-filters">
-            <h2>Find a Tutor</h2>
-            <form id="search-form">
-                <label for="search">Search by keywords or tags (e.g., "Math, Grade 9, Distance"):</label>
-                <input type="text" id="search" name="search" placeholder="Enter keywords...">
-                <button type="submit">Search</button>
-            </form>
-        </section>
 
-        <section id="tutor-list">
-            <h2>Tutors</h2>
-            <div id="tutor-items">
-                <!-- Tutor listings will be dynamically injected here -->
-            </div>
-        </section>
+        <div class="directory">
+            <section id="search-filters">
+                <h2>Find a Tutor</h2>
+                <form id="search-form">
+                    <label for="search">Search by keywords or tags (e.g., "Math, Grade 9, Distance"):</label>
+                    <input type="text" id="search" name="search" placeholder="Enter keywords...">
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+    
+            <section id="tutor-list">
+                <h2>Tutors</h2>
+                <div id="tutor-items">
+                    <!-- Tutor listings will be dynamically injected here -->
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <footer>

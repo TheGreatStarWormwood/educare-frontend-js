@@ -1,3 +1,5 @@
+<!-- tutor-profile.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,7 @@
             <p id="tutor-description"></p>
             <h3>Listings:</h3>
             <ul id="listings">
-                <!-- Tutor listings will be dynamically injected here -->
+                <!-- Listings will be injected here dynamically -->
             </ul>
         </section>
     </main>
@@ -43,11 +45,9 @@
         const tutor = tutorData.find(tutor => tutor.id === tutorId);
 
         if (tutor) {
-            // Display tutor's name and description (or any other details you want)
             document.getElementById('tutor-name').innerText = tutor.name;
-            document.getElementById('tutor-description').innerText = `Tutor Profile for ${tutor.name}`;
+            document.getElementById('tutor-description').innerText = tutor.description;
 
-            // Display tutor's listings
             const listingsList = document.getElementById('listings');
             tutor.listings.forEach(listing => {
                 const listItem = document.createElement('li');

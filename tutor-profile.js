@@ -1,3 +1,5 @@
+// tutor-profile.js
+
 const params = new URLSearchParams(window.location.search);
 const tutorId = params.get('id');
 

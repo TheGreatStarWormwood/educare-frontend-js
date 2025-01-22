@@ -1,82 +1,134 @@
+// tutordata.js
+
 const tutorData = [
     {
         id: 1,
-        name: "John Doe",
+        name: "Tutor1",
+        description: "Description1: Specializes in Math and Science for middle school students.",
         listings: [
-            { subject: "English", grade: "Grade 6", price: "110$/session", location: "5 km", tags: ["english", "grade 6", "110$/session"] },
-            { subject: "Math", grade: "Grade 9", price: "80$/session", location: "8 km", tags: ["math", "grade 9", "80$/session"] }
+            { listingId: 101, keywords: "math, science, grade 8, $20/hour, 5 km" },
+            { listingId: 102, keywords: "geometry, physics, grade 9, $25/hour, 7 km" }
+        ],
+        reviews: [
+            { text: "Very patient and knowledgeable!", stars: 5 },
+            { text: null, stars: 4 }
         ]
     },
     {
         id: 2,
-        name: "Jane Smith",
+        name: "Tutor2",
+        description: "Description2: Offers English literature and writing skills for high school.",
         listings: [
-            { subject: "English", grade: "Grade 10", price: "150$/session", location: "10 km", tags: ["english", "grade 10", "150$/session"] },
-            { subject: "History", grade: "Grade 12", price: "120$/session", location: "15 km", tags: ["history", "grade 12", "120$/session"] }
+            { listingId: 201, keywords: "english, literature, grade 10, $30/hour, 10 km" },
+            { listingId: 202, keywords: "creative writing, essays, grade 11, $35/hour, 12 km" }
+        ],
+        reviews: [
+            { text: "Helped improve my writing significantly.", stars: 5 },
+            { text: "Engaging lessons!", stars: 4 }
         ]
     },
     {
         id: 3,
-        name: "Alan Turner",
+        name: "Tutor3",
+        description: "Description3: Expert in SAT and ACT test preparation.",
         listings: [
-            { subject: "Science", grade: "Grade 9", price: "100$/session", location: "6 km", tags: ["science", "grade 9", "100$/session"] },
-            { subject: "Physics", grade: "Grade 11", price: "130$/session", location: "4 km", tags: ["physics", "grade 11", "130$/session"] }
+            { listingId: 301, keywords: "SAT, ACT, test prep, $40/hour, 15 km" },
+            { listingId: 302, keywords: "college entrance exams, $45/hour, online" }
+        ],
+        reviews: [
+            { text: "My SAT score improved by 200 points!", stars: 5 },
+            { text: "Great tips for test-taking strategies.", stars: 5 }
         ]
     },
     {
         id: 4,
-        name: "Sophia Lee",
+        name: "Tutor4",
+        description: "Description4: Focuses on elementary-level tutoring for all subjects.",
         listings: [
-            { subject: "Math", grade: "Grade 8", price: "95$/session", location: "7 km", tags: ["math", "grade 8", "95$/session"] },
-            { subject: "English", grade: "Grade 7", price: "85$/session", location: "5 km", tags: ["english", "grade 7", "85$/session"] }
+            { listingId: 401, keywords: "elementary, all subjects, grade 4, $15/hour, 3 km" },
+            { listingId: 402, keywords: "math, reading, grade 5, $18/hour, 5 km" }
+        ],
+        reviews: [
+            { text: "My child loves learning with Tutor4!", stars: 5 },
+            { text: "Very friendly and approachable.", stars: 4 }
         ]
     },
     {
         id: 5,
-        name: "Michael Brown",
+        name: "Tutor5",
+        description: "Description5: Offers advanced tutoring in computer science and programming.",
         listings: [
-            { subject: "Math", grade: "Grade 10", price: "120$/session", location: "2 km", tags: ["math", "grade 10", "120$/session"] },
-            { subject: "Chemistry", grade: "Grade 12", price: "150$/session", location: "3 km", tags: ["chemistry", "grade 12", "150$/session"] }
+            { listingId: 501, keywords: "programming, python, Java, $50/hour, online" },
+            { listingId: 502, keywords: "data structures, algorithms, $60/hour, online" }
+        ],
+        reviews: [
+            { text: "Made complex topics easy to understand.", stars: 5 },
+            { text: "Very knowledgeable in coding.", stars: 5 }
         ]
     },
     {
         id: 6,
-        name: "Emily Wilson",
+        name: "Tutor6",
+        description: "Description6: Music teacher offering piano and guitar lessons.",
         listings: [
-            { subject: "History", grade: "Grade 8", price: "90$/session", location: "6 km", tags: ["history", "grade 8", "90$/session"] },
-            { subject: "English", grade: "Grade 11", price: "110$/session", location: "5 km", tags: ["english", "grade 11", "110$/session"] }
+            { listingId: 601, keywords: "piano, music theory, beginner, $40/hour, 8 km" },
+            { listingId: 602, keywords: "guitar, music performance, $45/hour, 10 km" }
+        ],
+        reviews: [
+            { text: "Fun and interactive lessons!", stars: 5 },
+            { text: "Helped me prepare for a recital.", stars: 5 }
         ]
     },
     {
         id: 7,
-        name: "David Harris",
+        name: "Tutor7",
+        description: "Description7: Biology and chemistry tutor for pre-med students.",
         listings: [
-            { subject: "English", grade: "Grade 6", price: "100$/session", location: "4 km", tags: ["english", "grade 6", "100$/session"] },
-            { subject: "Math", grade: "Grade 9", price: "80$/session", location: "7 km", tags: ["math", "grade 9", "80$/session"] }
+            { listingId: 701, keywords: "biology, organic chemistry, $50/hour, 10 km" },
+            { listingId: 702, keywords: "anatomy, physiology, $55/hour, online" }
+        ],
+        reviews: [
+            { text: "Perfect for pre-med preparation.", stars: 5 },
+            { text: "Detailed and thorough explanations.", stars: 5 }
         ]
     },
     {
         id: 8,
-        name: "Olivia Martinez",
+        name: "Tutor8",
+        description: "Description8: Specializes in economics and business studies.",
         listings: [
-            { subject: "Math", grade: "Grade 11", price: "130$/session", location: "8 km", tags: ["math", "grade 11", "130$/session"] },
-            { subject: "Physics", grade: "Grade 10", price: "140$/session", location: "3 km", tags: ["physics", "grade 10", "140$/session"] }
+            { listingId: 801, keywords: "economics, macroeconomics, grade 12, $35/hour, online" },
+            { listingId: 802, keywords: "business studies, accounting, $40/hour, 8 km" }
+        ],
+        reviews: [
+            { text: "Helped me ace my econ exam!", stars: 5 },
+            { text: null, stars: 4 }
         ]
     },
     {
         id: 9,
-        name: "James Robinson",
+        name: "Tutor9",
+        description: "Description9: Spanish and French language tutoring.",
         listings: [
-            { subject: "Biology", grade: "Grade 12", price: "150$/session", location: "2 km", tags: ["biology", "grade 12", "150$/session"] },
-            { subject: "Math", grade: "Grade 8", price: "90$/session", location: "6 km", tags: ["math", "grade 8", "90$/session"] }
+            { listingId: 901, keywords: "Spanish, beginner, conversation, $25/hour, 5 km" },
+            { listingId: 902, keywords: "French, grammar, grade 11, $30/hour, 7 km" }
+        ],
+        reviews: [
+            { text: "Improved my conversational skills greatly.", stars: 5 },
+            { text: "Clear and patient teaching.", stars: 4 }
         ]
     },
     {
         id: 10,
-        name: "Isabella Clark",
+        name: "Tutor10",
+        description: "Description10: Offers tutoring in art and design.",
         listings: [
-            { subject: "Math", grade: "Grade 9", price: "100$/session", location: "4 km", tags: ["math", "grade 9", "100$/session"] },
-            { subject: "English", grade: "Grade 12", price: "120$/session", location: "10 km", tags: ["english", "grade 12", "120$/session"] }
+            { listingId: 1001, keywords: "drawing, painting, beginner, $30/hour, 6 km" },
+            { listingId: 1002, keywords: "graphic design, Photoshop, $50/hour, online" }
+        ],
+        reviews: [
+            { text: "Boosted my creativity and technique.", stars: 5 },
+            { text: "Very inspiring tutor!", stars: 5 }
         ]
     }
 ];

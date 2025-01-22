@@ -1,3 +1,6 @@
+<!--  -->
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -67,4 +70,44 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Example basic CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.star {
+    font-size: 20px;
+    color: #ccc;
+}
+
+.star.filled {
+    color: gold;
+}
+
+.directory{
+    max-width: 60%;
+    margin: auto;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
 }
