@@ -34,16 +34,35 @@ main {
     padding: 20px;
 }
 
-#search-filters form {
-    margin-bottom: 20px;
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
 }
 
-#search-filters label {
-    margin-right: 10px;
+.search-bar input[type="text"] {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-#search-filters input, #search-filters select {
-    margin-bottom: 10px;
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 9rem;
+    height: 4rem;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
 }
 
 #tutor-list {
@@ -110,4 +129,57 @@ main {
     background-color: #f1f1f1;
     padding: 10px;
     border-radius: 10px;
+}
+
+.tutor-profile {
+    max-width: 60%;
+    min-height: 50rem;
+    margin: auto;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tutor-info{
+    min-height: 10rem;
+    padding: 20px;
+    margin: auto;
+}
+
+.tutor-listings{
+    margin: auto;
+    padding: 20px;
+}
+
+.horizontal-sep{
+    width: 95%; 
+    height: 2px; 
+    background-color: #ccc; 
+    margin: 20px auto; 
+}
+
+.listings-grid {
+    display: grid;
+    margin-top: 20px;
+}
+
+/* Individual listing items */
+.listing-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: left;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.listing-item a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.listing-item a:hover {
+    text-decoration: underline;
 }

@@ -7,8 +7,13 @@ document.getElementById('search-form').addEventListener('submit', function(event
     if (searchQuery) {
         filterTutors(searchQuery);
     } else {
-        alert("Please enter a keyword to search.");
+        displayTutors(tutorData);
     }
+});
+
+// Display tutors by default
+window.addEventListener('load', function() {
+    displayTutors(tutorData);
 });
 
 

@@ -2,12 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutor Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Tutor Profile</h1>
@@ -21,14 +23,26 @@
     </header>
 
     <main>
-        <section id="tutor-profile">
-            <h2 id="tutor-name"></h2>
-            <p id="tutor-description"></p>
-            <h3>Listings:</h3>
-            <ul id="listings">
-                <!-- Listings will be injected here dynamically -->
-            </ul>
-        </section>
+
+        <div class="tutor-profile">
+            <section id="tutor-profile">
+
+                <div class="tutor-info">
+                    <h2 id="tutor-name"></h2>
+                    <p id="tutor-description"></p>
+                </div>
+
+                <div class="horizontal-sep"></div>
+
+                <div class="tutor-listings">
+                    <h3>Listings:</h3>
+                    <ul id="listings">
+                        <!-- Listings will be injected here dynamically -->
+                    </ul>
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <footer>
@@ -48,20 +62,21 @@
             document.getElementById('tutor-name').innerText = tutor.name;
             document.getElementById('tutor-description').innerText = tutor.description;
 
-            const listingsList = document.getElementById('listings');
+            const listingsContainer = document.getElementById('listings');
             tutor.listings.forEach(listing => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
+                const listingDiv = document.createElement('div');
+                listingDiv.classList.add('listing-item');
+                listingDiv.innerHTML = `
                     <strong>${listing.subject} ${listing.grade}</strong><br>
                     Price: ${listing.price}<br>
                     Location: ${listing.location}<br>
-                    <a href="listing.html?id=${tutor.id}&listing=${listing.subject}">View Listing Details</a>
                 `;
-                listingsList.appendChild(listItem);
+                listingsContainer.appendChild(listingDiv);
             });
         } else {
             document.getElementById('tutor-profile').innerHTML = "<p>Tutor not found.</p>";
         }
     </script>
 </body>
+
 </html>
