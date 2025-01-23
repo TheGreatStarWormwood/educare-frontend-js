@@ -51,11 +51,11 @@ function displayTutors(tutors) {
                     <li><a href="listing.html?tutorId=${tutor.id}&listingId=${listing.listingId}">${listing.keywords}</a></li>
                 `).join('')}
             </ul>
-            <p><strong>Reviews:</strong></p>
+            <p><strong>Rating:</strong></p>
             <ul>
                 ${tutor.reviews.map(review => `
                     <li>
-                        ${review.text ? `<q>${review.text}</q>` : "No review text"} - ${review.stars} stars
+                         ${review.stars} stars
                     </li>
                 `).join('')}
             </ul>

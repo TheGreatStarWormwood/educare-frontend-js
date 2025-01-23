@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tutor Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tutor-profile">
+            <section id="tutor-profile">
+                <div class="tutor-info">
+                    <h2 id="tutor-name"></h2>
+                    <p id="tutor-description"></p>
+                </div>
+
+                <div class="horizontal-sep"></div>
+
+                <div class="tutor-listings">
+                    <h3>Listings:</h3>
+                    <ul id="listings">
+                        <!-- Listings will be injected here dynamically -->
+                    </ul>
+                </div>
+
+                <div class="horizontal-sep"></div>
+
+                <div class="edit-profile">
+                    <button onclick="window.location.href='tutor-profileEdit.html?id=' + tutorId">Edit Profile</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tutor Directory</p>
+    </footer>
+
+    <script src="tutordata.js"></script>
+    <script>
+        // Extract tutor ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tutorId = parseInt(urlParams.get('id'));
+
+        // Find tutor by ID
+        const tutor = tutorData.find(tutor => tutor.id === tutorId);
+
+        if (tutor) {
+            document.getElementById('tutor-name').innerText = tutor.name;
+            document.getElementById('tutor-description').innerText = tutor.description;
+
+            const listingsContainer = document.getElementById('listings');
+            tutor.listings.forEach(listing => {
+                const listingDiv = document.createElement('div');
+                listingDiv.classList.add('listing-item');
+                listingDiv.innerHTML = `
+                    <strong>${listing.subject} ${listing.grade}</strong><br>
+                    Price: ${listing.price}<br>
+                    Location: ${listing.location}<br>
+                `;
+                listingsContainer.appendChild(listingDiv);
+            });
+        } else {
+            document.getElementById('tutor-profile').innerHTML = "<p>Tutor not found.</p>";
+        }
+    </script>
+</body>
+
+</html>

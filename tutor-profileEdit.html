@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Tutor Profile</title>
+    <link rel="stylesheet" href="editStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="my-5">
+            <h3>Edit Profile</h3>
+            <hr>
+        </div>
+        <form id="edit-profile-form">
+            <div class="section">
+                <h4>Contact detail</h4>
+                <label>Name *</label>
+                <input type="text" id="name" required>
+                <label>Email *</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="section">
+                <h4>Change Password</h4>
+                <label>Old password *</label>
+                <input type="password" id="old-password">
+                <label>New password *</label>
+                <input type="password" id="new-password">
+                <label>Confirm Password *</label>
+                <input type="password" id="confirm-password">
+            </div>
+            <div class="buttons">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="done-btn">Done</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="tutordata.js"></script>
+    <script>
+        // Extract tutor ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tutorId = parseInt(urlParams.get('id'));
+
+        // Find tutor by ID
+        const tutor = tutorData.find(tutor => tutor.id === tutorId);
+
+        if (tutor) {
+            document.getElementById('name').value = tutor.name;
+            document.getElementById('email').value = tutor.email;
+            document.getElementById('edit-profile-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                tutor.name = document.getElementById('name').value;
+                tutor.email = document.getElementById('email').value;
+                // Redirect back to the profile page
+                window.location.href = 'tutorViewProfile.html?id=' + tutorId;
+            });
+        } else {
+            document.body.innerHTML = "<p>Tutor not found.</p>";
+        }
+    </script>
+</body>
+
+</html>

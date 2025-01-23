@@ -12,7 +12,7 @@
         }
 
         header {
-            background-color: #333;
+            background-color: #008080;
             color: #fff;
             text-align: center;
             padding: 1rem;
@@ -35,17 +35,12 @@
             border-radius: 50px;
             padding: 5rem;
             margin: auto;
-
+            width: 40%;
         }
 
-        .column img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 8px;
-        }
 
         .column h2 {
+            padding-top: 60%;
             margin: 1rem 0 0.5rem;
         }
 
@@ -58,18 +53,26 @@
             margin-top: 0.5rem;
             text-decoration: none;
             color: white;
-            background-color: #007bff;
+            background-color: #008080;
             padding: 0.5rem 1rem;
             border-radius: 4px;
         }
 
         .column a:hover {
-            background-color: #0056b3;
+            background-color: #006666;
+        }
+        #dir-col {
+            background-image: url(imgs/dirBG.jpg);
+            opacity: 55%;
         }
 
+        #lms-col {
+            background-image: url(imgs/lmsBG.jpg);
+            opacity: 55%;
+        }
         footer {
             text-align: center;
-            background-color: #333;
+            background-color: #008080;
             color: #fff;
             padding: 1rem 0;
             margin-top: 2rem;
@@ -82,18 +85,16 @@
     </header>
 
     <div class="container">
-        <div class="column">
-            <img src="image1.jpg" alt="Image 1">
+        <div class="column" id="dir-col">
             <h2>Find a Tutor</h2>
             <p>Discover qualified tutors for a variety of subjects. Browse and select the one that suits your needs.</p>
             <a href="index.html">Browse Tutors</a>
         </div>
 
-        <div class="column">
-            <img src="image2.jpg" alt="Image 2">
+        <div class="column" id="lms-col">
             <h2>Access your LMS</h2>
             <p>View your LMS</p>
-            <a href="lms-list.html">View now</a>
+            <a href="lms.html">View now</a>
         </div>
     </div>
 
