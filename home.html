@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,8 @@
         }
 
         header {
-            background-color: #008080;
-            color: #fff;
+            background-color: #876445;
+            color: #F4DFBA;
             text-align: center;
             padding: 1rem;
         }
@@ -59,26 +60,43 @@
         }
 
         .column a:hover {
-            background-color: #006666;
+            background-color: #876445;
         }
+
         #dir-col {
             background-image: url(imgs/dirBG.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
             opacity: 55%;
         }
 
         #lms-col {
             background-image: url(imgs/lmsBG.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
             opacity: 55%;
+
         }
+
         footer {
             text-align: center;
-            background-color: #008080;
+            background-color: #876445;
             color: #fff;
             padding: 1rem 0;
             margin-top: 2rem;
         }
+
+        .column-internal{
+            background-color: #EEC373;
+            padding: 10px;
+            height: 450px;
+            position: relative;
+            top: 100px;
+            border-radius: 100px;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome to the Tutor Directory</h1>
@@ -86,15 +104,21 @@
 
     <div class="container">
         <div class="column" id="dir-col">
-            <h2>Find a Tutor</h2>
-            <p>Discover qualified tutors for a variety of subjects. Browse and select the one that suits your needs.</p>
-            <a href="index.html">Browse Tutors</a>
+            <div class="column-internal">
+                <h2>Find a Tutor</h2>
+                <p>Discover qualified tutors for a variety of subjects. Browse and select the one that suits your needs.
+                </p>
+                <a href="index.html">Browse Tutors</a>
+            </div>
         </div>
 
         <div class="column" id="lms-col">
-            <h2>Access your LMS</h2>
-            <p>View your LMS</p>
-            <a href="lms.html">View now</a>
+            <div class="column-internal">
+
+                <h2>Access your LMS</h2>
+                <p>View your LMS</p>
+                <a href="lms.html">View now</a>
+            </div>
         </div>
     </div>
 
@@ -102,4 +126,5 @@
         <p>&copy; 2025 Tutor Directory. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

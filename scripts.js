@@ -1,6 +1,6 @@
 // scripts.js
 
-document.getElementById('search-form').addEventListener('submit', function(event) {
+document.getElementById('search-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const searchQuery = document.getElementById('search').value.trim();
@@ -12,7 +12,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
 });
 
 // Display tutors by default
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     displayTutors(tutorData);
 });
 
@@ -43,6 +43,7 @@ function displayTutors(tutors) {
         const tutorItem = document.createElement('div');
         tutorItem.classList.add('tutor-item');
         tutorItem.innerHTML = `
+            <img src="${tutor.image}" alt="${tutor.name}" class="tutor-image"> <!-- Adding image here -->
             <h3><a href="tutor-profile.html?id=${tutor.id}">${tutor.name}</a></h3>
             <p>${tutor.description}</p>
             <p><strong>Listings:</strong></p>

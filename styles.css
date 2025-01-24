@@ -6,10 +6,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #F4DFBA;
 }
 
 header {
-    background-color: #008080;
+    background-color: #876445;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -40,7 +41,8 @@ main {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    background-color: #f5f5f5;
+    background-color: #876445;
+    border-radius: 100px;
 }
 
 .search-bar input[type="text"] {
@@ -52,7 +54,7 @@ main {
 
 .search-bar button {
     padding: 0.5rem 1rem;
-    background-color: #008080;
+    background-color: #876445;
     color: white;
     border: none;
     border-radius: 4px;
@@ -89,16 +91,17 @@ main {
     
 }
 .tutor-item {
-    border: 1px solid #ccc;
+    border: 2px solid #876445;
     padding: 10px;
     margin: 10px;
     width: 200px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 
 footer {
-    background-color: #008080;
+    background-color: #876445;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -141,7 +144,7 @@ main {
 .directory{
     max-width: 60%;
     margin: auto;
-    background-color: #f1f1f1;
+    background-color: #F4DFBA;
     padding: 10px;
     border-radius: 10px;
 }
@@ -150,7 +153,7 @@ main {
     max-width: 60%;
     min-height: 50rem;
     margin: auto;
-    background-color: #f1f1f1;
+    background-color: #F4DFBA;
     padding: 10px;
     border-radius: 10px;
 }
@@ -161,7 +164,7 @@ main {
     margin: auto;
 }
 #tutor-name {
-    text-align: center;
+    text-align: left;
     padding-bottom: 30px;
 }
 .tutor-listings{
@@ -172,7 +175,7 @@ main {
 .horizontal-sep{
     width: 95%; 
     height: 2px; 
-    background-color: #ccc; 
+    background-color: #876445; 
     margin: 20px auto; 
 }
 
@@ -194,7 +197,7 @@ main {
 }
 
 .listing-item a {
-    color: #008080;
+    color: #876445;
     text-decoration: none;
 }
 
@@ -208,7 +211,7 @@ main {
 }
 
 .edit-profile button{
-    background-color: #008080;
+    background-color: #876445;
     color: white;
     border: none;
     border-radius: 5px;
@@ -218,4 +221,72 @@ main {
 
 .edit-profile button:hover{
     background-color: #006666;
+}
+
+/* Style for the tutor profile container */
+.tutor-header {
+    display: flex;
+    flex-direction: column;  /* Stack the elements vertically */
+    margin-bottom: 20px;     /* Space between the tutor header and the listings */
+}
+
+.tutor-description { /* TODO color not changing */
+    color: #4CAF50; /* Example: Green */
+    font-size: 1.2em; /* Optional: Adjust font size */
+}
+
+.tutor-info {
+    display: flex;
+    align-items: center;   /* Vertically center the image and name */
+    margin-left: 10px;
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+
+.tutor-image {
+    width: 60px;          /* Set a fixed width for the image */
+    height: 60px;         /* Set a fixed height for the image */
+    border-radius: 50%;    /* Optional: makes the image circular */
+    margin-right: 20px;    /* Space between the image and name */
+}
+
+.tutor-info h2 {
+    margin: 0;             /* Remove margin from the name */
+    font-size: 24px;       /* Adjust the font size */
+}
+
+.tutor-info p {
+    margin: 0;             /* Remove margin from the description */
+    font-size: 16px;       /* Adjust the font size */
+}
+
+/* Style for the tutor description */
+.tutor-header p {
+    font-size: 16px;        /* Font size for the description */
+    color: #555;            /* Light gray color for the description */
+}
+
+
+/* Style for the tutor listings */
+.tutor-listings {
+    font-size: 16px;
+}
+
+.tutor-listings ul {
+    list-style-type: none;   /* Remove the default list bullets */
+    padding: 0;              /* Remove padding */
+}
+
+.tutor-listings li {
+    margin-bottom: 15px;     /* Space between each listing */
+}
+
+#tutor-profile {
+    max-width: 800px;        
+    margin: 0 auto;          
+    padding: 20px;           
+    background-color: #F4DFBA; /* Light background for the profile */
+    border-radius: 8px;      
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border: 2px solid #876445;
 }

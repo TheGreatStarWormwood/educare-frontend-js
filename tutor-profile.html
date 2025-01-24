@@ -50,33 +50,7 @@
     </footer>
 
     <script src="tutordata.js"></script>
-    <script>
-        // Extract tutor ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const tutorId = parseInt(urlParams.get('id'));
-
-        // Find tutor by ID
-        const tutor = tutorData.find(tutor => tutor.id === tutorId);
-
-        if (tutor) {
-            document.getElementById('tutor-name').innerText = tutor.name;
-            document.getElementById('tutor-description').innerText = tutor.description;
-
-            const listingsContainer = document.getElementById('listings');
-            tutor.listings.forEach(listing => {
-                const listingDiv = document.createElement('div');
-                listingDiv.classList.add('listing-item');
-                listingDiv.innerHTML = `
-                    <strong>${listing.subject} ${listing.grade}</strong><br>
-                    Price: ${listing.price}<br>
-                    Location: ${listing.location}<br>
-                `;
-                listingsContainer.appendChild(listingDiv);
-            });
-        } else {
-            document.getElementById('tutor-profile').innerHTML = "<p>Tutor not found.</p>";
-        }
-    </script>
+    <script src="tutor-profile.js"></script>
 </body>
 
 </html>
