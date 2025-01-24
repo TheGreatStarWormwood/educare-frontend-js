@@ -49,13 +49,13 @@ main {
     padding: 0.5rem;
     width: 300px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 1rem;
 }
 
 .search-bar button {
     padding: 0.5rem 1rem;
-    background-color: #876445;
-    color: white;
+    background-color: #F4DFBA;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -66,7 +66,8 @@ main {
 }
 
 .search-bar button:hover {
-    background-color: #006666;
+    background-color: #876445;
+    color: white;
 }
 
 #tutor-list {
@@ -147,6 +148,12 @@ main {
     background-color: #F4DFBA;
     padding: 10px;
     border-radius: 10px;
+}
+
+.tutor-image {
+    width: 5rem;
+    margin: auto;
+    margin-left: 3.8rem;
 }
 
 .tutor-profile {
@@ -243,7 +250,7 @@ main {
     margin-bottom: -50px;
 }
 
-.tutor-image {
+.tutor-image-profile {
     width: 60px;          /* Set a fixed width for the image */
     height: 60px;         /* Set a fixed height for the image */
     border-radius: 50%;    /* Optional: makes the image circular */

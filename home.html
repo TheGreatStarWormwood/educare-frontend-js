@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #F4DFBA;
         }
 
         header {
@@ -34,14 +35,14 @@
             min-height: 50rem;
             background-color: #f1f1f1;
             border-radius: 50px;
-            padding: 5rem;
-            margin: auto;
+            padding: 0;
+            /* Removed padding from .column */
             width: 40%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border: 4px solid #876445;
         }
 
-
         .column h2 {
-            padding-top: 60%;
             margin: 1rem 0 0.5rem;
         }
 
@@ -75,7 +76,6 @@
             background-repeat: no-repeat;
             background-size: cover;
             opacity: 55%;
-
         }
 
         footer {
@@ -86,13 +86,25 @@
             margin-top: 2rem;
         }
 
-        .column-internal{
+        .column-internal {
             background-color: #EEC373;
-            padding: 10px;
-            height: 450px;
-            position: relative;
-            top: 100px;
             border-radius: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Center horizontally */
+            text-align: center;
+            height: 100%;
+            /* Make it take the full height of the column */
+            padding: 2rem;
+            box-sizing: border-box;
+            /* Include padding in dimensions */
+            margin: auto;
+            margin-top: 10%;
+            width: 20rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border: 2px solid #876445;
         }
     </style>
 </head>

@@ -13,7 +13,7 @@ if (tutor) {
     tutorDetailsContainer.innerHTML = `
         <div class="tutor-header">
             <div class="tutor-info">
-                <img src="${tutor.image}" alt="${tutor.name}" class="tutor-image">
+                <img src="${tutor.image}" alt="${tutor.name}" class="tutor-image-profile">
                 <h2>${tutor.name}</h2>
             </div>
             <p class="tutor-description">${tutor.description}</p>
