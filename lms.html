@@ -6,100 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMS</title>
     <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* LMS Page */
-        .lms-section {
-            margin: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #F4DFBA;
-        }
-
-        .tutor-section,
-        .course-section {
-            margin-bottom: 20px;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-            border: 2px solid #876445;            
-            border-radius: 10px;
-            background-color: #F4DFBA;
-        }
-
-        h3 {
-            margin-top: 0;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        ul li a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        ul li a:hover {
-            text-decoration: underline;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
+        /* Add relevant styles here */
     </style>
-
 </head>
 
 <body>
     <header>
         <h1>Learning Management System</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <!-- Student View -->
-        <div id="student-view" class="lms-section">
-            <h2>Your Courses</h2>
-            <div id="student-lms">
-                <!-- Sections for each tutor will be injected dynamically -->
-            </div>
-        </div>
-
-        <!-- Tutor View -->
-        <div id="tutor-view" class="lms-section">
-            <h2>Your LMS Sections</h2>
-            <div id="tutor-lms">
-                <!-- Sections for each course will be injected dynamically -->
-            </div>
-            <button id="create-lms">Create New LMS Section</button>
+        <p id="error-message" style="display: none; color: red;">
+            Invalid or missing user. Please check the URL.
+        </p>
+        <div id="dynamic-view" class="lms-section">
+            <!-- Content populated dynamically based on userType -->
         </div>
     </main>
+
+    <nav>
+        <h3>Quick Links for Testing:</h3>
+        <ul>
+            <li><a href="?userType=student&id=1">View as Student: Alice Smith</a></li>
+            <li><a href="?userType=student&id=2">View as Student: Bob Johnson</a></li>
+            <li><a href="?userType=tutor&id=1">View as Tutor: Tutor1</a></li>
+            <li><a href="?userType=tutor&id=2">View as Tutor: Tutor2</a></li>
+        </ul>
+    </nav>
 
     <footer>
         <p>&copy; 2025 Tutor Directory</p>
     </footer>
 
+    <script src="scripts/lmsdata.js"></script>
+    <script src="scripts/studentdata.js"></script>
+    <script src="scripts/enrollmentdata.js"></script>
     <script src="scripts/lms.js"></script>
 </body>
 
