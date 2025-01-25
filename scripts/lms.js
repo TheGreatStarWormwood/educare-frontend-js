@@ -43,10 +43,12 @@ function renderStudentView(student, container) {
     enrolledCourses.forEach(lms => {
         lms.courses.forEach(course => {
             const courseElement = document.createElement('div');
-            courseElement.innerHTML = `
-                <h4>${course.name}</h4>
-                <p>${course.description}</p>
-            `;
+            courseElement.classList.add('course-card');
+            courseElement.innerHTML = 
+                `<a href="course.html?courseId=${course.courseId}">
+                    <h4>${course.name}</h4>
+                    <p>${course.description}</p>
+                </a>`;
             container.appendChild(courseElement);
         });
     });
@@ -57,13 +59,16 @@ function renderTutorView(tutorLms, container) {
     container.innerHTML = `<h2>Welcome, Tutor</h2><h3>Your LMS Sections:</h3>`;
     tutorLms.courses.forEach(course => {
         const courseElement = document.createElement('div');
-        courseElement.innerHTML = `
-            <h4>${course.name}</h4>
-            <p>${course.description}</p>
-        `;
+        courseElement.classList.add('course-card');
+        courseElement.innerHTML = 
+            `<a href="course.html?courseId=${course.courseId}">
+                <h4>${course.name}</h4>
+                <p>${course.description}</p>
+            </a>`;
         container.appendChild(courseElement);
     });
 }
+
 
 // Initialize
 renderView();

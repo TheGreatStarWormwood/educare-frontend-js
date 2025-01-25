@@ -7,7 +7,52 @@
     <title>LMS</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add relevant styles here */
+
+        main{
+            width: 80%;
+            margin: auto;
+        }
+
+        footer{
+            position: fixed;
+        }
+
+        .lms-section {
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            gap: 20px;
+            /* Space between each course */
+        }
+
+        .course-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .course-card h4 {
+            margin: 0 0 10px;
+        }
+
+        .course-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
     </style>
 </head>
 

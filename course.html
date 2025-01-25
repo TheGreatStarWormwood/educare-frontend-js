@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main{
+            width: 80%;
+            margin: auto;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .course-details {
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            border: 2px solid #876445;
+            border-radius: 1rem;
+            padding: 10px;
+        }
+
+        .course-details ul li {
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .course-details ul li:hover {
+            background-color: #f1f1f1;
+        }
+
+        #error-message {
+            color: red;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        nav {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        nav a {
+            font-size: 1.2em;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 40px;
+        }    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Course Details</h1>
+    </header>
+
+    <main>
+        <p id="error-message" style="display: none; color: red;">
+            Course not found. Please check the URL.
+        </p>
+        <div id="course-details" class="course-details">
+            <!-- Course content populated dynamically -->
+        </div>
+    </main>
+
+    <nav>
+        <h3>Quick Links:</h3>
+        <ul>
+            <li><a href="index.html">Back to LMS</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Tutor Directory</p>
+    </footer>
+    <script src="scripts/lmsdata.js"></script>
+    <script src="scripts/studentdata.js"></script>
+    <script src="scripts/enrollmentdata.js"></script>
+    <script src="scripts/course.js"></script>
+</body>
+
+</html>
