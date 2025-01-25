@@ -1,38 +1,25 @@
-// scripts.js
-
-document.getElementById('search-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const searchQuery = document.getElementById('search').value.trim();
-    if (searchQuery) {
-        filterTutors(searchQuery);
-    } else {
-        displayTutors(tutorData);
+// Fetch tutors from the server
+async function fetchTutors(query = '') {
+    const url = `http://127.0.0.1:5505/tutors'`;
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const tutors = await response.json();
+            return tutors;
+        } else {
+            throw new Error('Error fetching tutors');
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Failed to fetch tutors.");
+        return [];
     }
-});
-
-// Display tutors by default
-window.addEventListener('load', function () {
-    displayTutors(tutorData);
-});
-
-
-function filterTutors(query) {
-    const queryTags = query.split(",").map(tag => tag.trim().toLowerCase());
-    const filteredTutors = tutorData.filter(tutor =>
-        tutor.listings.some(listing =>
-            queryTags.every(tag =>
-                listing.keywords.toLowerCase().includes(tag)
-            )
-        )
-    );
-
-    displayTutors(filteredTutors);
 }
 
+// Display tutors on the page
 function displayTutors(tutors) {
     const tutorItemsContainer = document.getElementById('tutor-items');
-    tutorItemsContainer.innerHTML = ''; // Clear previous results
+    tutorItemsContainer.innerHTML = '';  // Clear previous results
 
     if (tutors.length === 0) {
         tutorItemsContainer.innerHTML = "<p>No tutors found based on your search.</p>";
@@ -43,7 +30,7 @@ function displayTutors(tutors) {
         const tutorItem = document.createElement('div');
         tutorItem.classList.add('tutor-item');
         tutorItem.innerHTML = `
-            <img src="${tutor.image}" alt="${tutor.name}" class="tutor-image"> <!-- Adding image here -->
+            <img src="${tutor.image}" alt="${tutor.name}" class="tutor-image">
             <h3><a href="tutor-profile.html?id=${tutor.id}">${tutor.name}</a></h3>
             <p>${tutor.description}</p>
             <p><strong>Listings:</strong></p>
@@ -55,9 +42,7 @@ function displayTutors(tutors) {
             <p><strong>Rating:</strong></p>
             <ul>
                 ${tutor.reviews.map(review => `
-                    <li>
-                         ${review.stars} stars
-                    </li>
+                    <li>${review.stars} stars</li>
                 `).join('')}
             </ul>
         `;
@@ -65,3 +50,33 @@ function displayTutors(tutors) {
     });
 }
 
+// Handle search form submission
+document.getElementById('search-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const searchQuery = document.getElementById('search').value.trim();
+
+    fetchTutors(searchQuery).then(tutors => {
+        const filteredTutors = filterTutors(tutors, searchQuery);
+        displayTutors(filteredTutors);
+    });
+});
+
+// Filter tutors based on search query
+function filterTutors(tutors, query) {
+    const queryTags = query.split(",").map(tag => tag.trim().toLowerCase());
+    return tutors.filter(tutor =>
+        tutor.listings.some(listing =>
+            queryTags.every(tag =>
+                listing.keywords.toLowerCase().includes(tag)
+            )
+        )
+    );
+}
+
+// Display tutors when the page loads
+window.addEventListener('load', function () {
+    fetchTutors().then(tutors => {
+        displayTutors(tutors);
+    });
+});

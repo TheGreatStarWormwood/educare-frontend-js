@@ -1,4 +1,3 @@
-
 // Function to get URL parameters
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
@@ -8,27 +7,32 @@ function getQueryParams() {
     };
 }
 
+// Fetch data from the server
+async function fetchData(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    return response.json();
+}
+
 // Render the appropriate view
-function renderView() {
+async function renderView() {
     const { userType, id } = getQueryParams();
     const dynamicView = document.getElementById('dynamic-view');
     const errorMessage = document.getElementById('error-message');
 
-    if (userType === 'student') {
-        const student = studentData.find(student => student.id === id);
-        if (student) {
+    try {
+        if (userType === 'student') {
+            const student = await fetchData(`/students/${id}`);
             renderStudentView(student, dynamicView);
-        } else {
-            errorMessage.style.display = 'block';
-        }
-    } else if (userType === 'tutor') {
-        const tutorLms = lmsData.find(lms => lms.tutorId === id);
-        if (tutorLms) {
+        } else if (userType === 'tutor') {
+            const tutorLms = await fetchData(`/tutors/${id}/lms`);
             renderTutorView(tutorLms, dynamicView);
         } else {
             errorMessage.style.display = 'block';
         }
-    } else {
+    } catch (error) {
         errorMessage.style.display = 'block';
     }
 }
@@ -36,11 +40,29 @@ function renderView() {
 // Render Student View
 function renderStudentView(student, container) {
     container.innerHTML = `<h2>Welcome, ${student.name}</h2><h3>Your Courses:</h3>`;
-    const enrolledCourses = enrollmentData
-        .filter(enrollment => enrollment.studentId === student.id)
-        .map(enrollment => lmsData.find(lms => lms.id === enrollment.lmsId));
+    fetchData(`/students/${student.id}/enrollments`)
+        .then(enrollments => {
+            enrollments.forEach(enrollment => {
+                fetchData(`/lms/${enrollment.lmsId}`)
+                    .then(lms => {
+                        lms.courses.forEach(course => {
+                            const courseElement = document.createElement('div');
+                            courseElement.innerHTML = `
+                                <h4>${course.name}</h4>
+                                <p>${course.description}</p>
+                            `;
+                            container.appendChild(courseElement);
+                        });
+                    });
+            });
+        })
+        .catch(err => console.error('Error fetching enrollments', err));
+}
 
-    enrolledCourses.forEach(lms => {
+// Render Tutor View
+function renderTutorView(lmsData, container) {
+    container.innerHTML = `<h2>Welcome, Tutor</h2><h3>Your LMS Sections:</h3>`;
+    lmsData.forEach(lms => {
         lms.courses.forEach(course => {
             const courseElement = document.createElement('div');
             courseElement.innerHTML = `
@@ -49,19 +71,6 @@ function renderStudentView(student, container) {
             `;
             container.appendChild(courseElement);
         });
-    });
-}
-
-// Render Tutor View
-function renderTutorView(tutorLms, container) {
-    container.innerHTML = `<h2>Welcome, Tutor</h2><h3>Your LMS Sections:</h3>`;
-    tutorLms.courses.forEach(course => {
-        const courseElement = document.createElement('div');
-        courseElement.innerHTML = `
-            <h4>${course.name}</h4>
-            <p>${course.description}</p>
-        `;
-        container.appendChild(courseElement);
     });
 }
 
