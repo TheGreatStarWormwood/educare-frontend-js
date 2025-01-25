@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #F4DFBA;
     margin: 0;
     padding: 0;
 }
@@ -9,9 +9,10 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #F4DFBA;
+    border: 2px solid #876445;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .my-5 {
@@ -36,7 +37,7 @@ hr {
 
 .section h4 {
     font-size: 1.5rem;
-    color: #495057;
+    color: black;
     margin-bottom: 1rem;
 }
 .section input {
@@ -47,7 +48,7 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #495057;
+    color: black;
 }
 
 input {
@@ -58,13 +59,13 @@ input {
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
-    border: 1px solid #ced4da;
+    border: 1px solid #876445;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
 }
 
 input:focus {
-    border-color: #80bdff;
+    border-color: #876445;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
@@ -77,7 +78,7 @@ input:focus {
 
 button {
     padding: 10px 15px;
-    background-color: #008080;
+    background-color: #876445;
     color: white;
     border: none;
     border-radius: 4px;
